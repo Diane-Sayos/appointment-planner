@@ -8,6 +8,7 @@ const getTodayString = () => {
 }
 
 const AppointmentForm = ({contacts, name, setName, contact, setContact, date, setDate, time, setTime, handleSubmit}) => {
+    //gets the list of names in the contact list and make sure it updates
     const contactNames = useMemo(() => {
         return contacts.map((contact) => contact.name)
     }, [contacts]);
@@ -17,6 +18,7 @@ const AppointmentForm = ({contacts, name, setName, contact, setContact, date, se
             <form onSubmit={handleSubmit}>
                 <label>
                     <input
+                        type="text"
                         name="name"
                         placeholder="Appointment Name"
                         value={name}

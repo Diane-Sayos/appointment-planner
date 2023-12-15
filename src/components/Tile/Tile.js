@@ -1,10 +1,11 @@
 
-
-
-const Tile = () => {
+const Tile = ({ name, description }) => {
     return (
-        <section className="tile">
-            <p>tile</p>
+        <section className="tile-container">
+            <p className="tile-title">{name}</p>
+            {Object.values(description).map((value, index) => (
+                <p key={index} className="tile">{value}</p>
+            ))}
         </section>
     )
 };
