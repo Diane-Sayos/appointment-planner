@@ -3,26 +3,29 @@ import { useState } from 'react';
 import AppointmentForm from "../../components/AppointmentForm/AppointmentForm.js";
 import TileList from "../../components/TileList/TileList.js";
 
-const AppointmentsPage = (props) => {
-    const [contact, setContact] = useState({});
-    const [title, setTitle] = useState("");
+const AppointmentsPage = ({ appointments, addAppointment, contacts }) => {
+    const [name, setName] = useState("")
+    const [contact, setContact] = useState("");
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //add appointment using props
-
+        addAppointment(name, contact, date, time)
+        setContact("")
+        setName("")
+        setDate("")
+        setTime("")
     };
 
     return (
         <section className="appointments-page">
             <section className="appointment-form-page">
                 <h2>Add Appointment</h2>
-                <AppointmentForm contacts={props.contacts} contact={contact} setContact={setContact} title={title} setTitle={setTitle} date={date} setDate={setDate} time={time} setTime={setTime} handleSubmit={handleSubmit} />
+                <AppointmentForm contacts={contacts} contact={contact} setContact={setContact} name={name} setName={setName} date={date} setDate={setDate} time={time} setTime={setTime} handleSubmit={handleSubmit} />
             </section>
             <section className="appointments-list">
-                <TileList appointments={props.appointments} />
+                <TileList appointments={appointments} />
             </section>
         </section>
     )
