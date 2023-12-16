@@ -1,11 +1,11 @@
 import Tile from "../Tile/Tile.js";
 
 
-const TileList = ({ contacts }) => {
+const TileList = ({ tiles }) => {
     return (
         <section className="tilelist">
-            {contacts.map((contact, index) => {
-                const {name, ...description } = contact;
+            {tiles.map((tile, index) => {
+                const {name, ...description } = tile;
                 return <Tile key={index} name={name} description={description} />
             })}
         </section>

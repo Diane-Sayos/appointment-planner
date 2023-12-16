@@ -24,8 +24,11 @@ const AppointmentsPage = ({ appointments, addAppointment, contacts }) => {
                 <h2>Add Appointment</h2>
                 <AppointmentForm contacts={contacts} contact={contact} setContact={setContact} name={name} setName={setName} date={date} setDate={setDate} time={time} setTime={setTime} handleSubmit={handleSubmit} />
             </section>
+            <br />
+            <br />
             <section className="appointments-list">
-                <TileList appointments={appointments} />
+                <h2>APPOINTMENTS</h2>
+                <TileList tiles={appointments} />
             </section>
         </section>
     )

@@ -42,9 +42,11 @@ const ContactsPage = ({ contacts, addContact }) => {
                 <h2>Add Contact {duplicate ? "- Name Already Exists" : ""}</h2>
                 <ContactForm name={name} setName={setName} phone={phone} setPhone={setPhone} email={email} setEmail={setEmail} handleSubmit={handleSubmit} />
             </section>
+            <br />
+            <br />
             <section className="contacts-list">
-                <h2>Contacts</h2>
-                <TileList contacts={contacts}/>
+                <h2>CONTACTS</h2>
+                <TileList tiles={contacts}/>
             </section>
         </section>
     )
